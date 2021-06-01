@@ -1,0 +1,28 @@
+{% extends 'main/layoutg.html' %}
+
+{% block title %}Резерв{% endblock %}
+
+
+{% block content %}
+<div class="features">
+ <h1>Забронировать стол</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        {{form.title}}<br>
+        {{form.anon}}<br>
+        {{form.full}}<br>
+        {{form.table}}<br>
+        {{form.guests}}<br><br>
+        {{form.vdate}}<br>
+        {{form.vtime}}<br>
+
+<button class="btn btn-success" type="submit">Добавить</button>
+    </form>
+
+    <span>{{ error }}</span>
+
+
+
+</div>
+{% endblock %}

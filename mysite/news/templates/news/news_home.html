@@ -1,0 +1,34 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Новости{% endblock %}
+
+
+{% block content %}
+<div class="features">
+ <h1>РЕЗЕРВЫ</h1>
+<!--  <p>Выберите дату: <input type="date" name="calendar">-->
+<!--   <input type="submit" value="применить"></p>-->
+ <br>
+ {% if news %}
+ {% for el in news %}
+
+ <div class="alert alert-warning">
+  <h3>
+   {{ el.title}}
+  </h3>
+  <p>
+   {{ el.vdate }} в {{ el.vtime }}
+  </p>
+ <a href="{% url 'news-det' el.id %}" class="btn btn-warning">Подробнее</a>
+ </div>
+
+ {% endfor %}
+
+ {% else %}
+ <p>У вас нет резервов!</p>
+{% endif %}
+
+ {# Комментарий #}
+
+</div>
+{% endblock %}

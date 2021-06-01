@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{artic.title}}{% endblock %}
+
+
+{% block content %}
+<div class="features">
+ <h1>{{ artic.title}}</h1>
+    <h3>{{ artic.date}}</h3><br>
+<h5>{{ artic.vdate}}</h5>
+    <h5>{{ artic.vtime}}</h5><br>
+
+    <h4>Количество гостей:</h4>
+    <h3>{{ artic.guests}}</h3><br>
+    <h4>Номер стола:</h4>
+    <h3>{{ artic.table}}</h3><br>
+
+        <h4>особые заметки:</h4>
+    <h3>{{ artic.full}}</h3><br>
+<br>
+    <h3>Операции с резервом</h3>
+
+    <a href="{% url 'news-del' artic.id %}" class="btn btn-danger">Удалить</a>
+    <a href="{% url 'news-upd' artic.id %}" class="btn btn-info">Обновить</a>
+
+</div>
+{% endblock %}
